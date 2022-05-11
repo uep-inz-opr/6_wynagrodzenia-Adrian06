@@ -44,6 +44,6 @@ for x in range(i):
 for id in pracownicy:
 	pracownik = Pracownik(pracownicy[id]['imie'], pracownicy[id]['pensja'])
 	laczny_koszt += pracownicy[id]['pensja'] + pracownik.skladki_pracodawcy()
-	print(f"{pracownicy[id]['imie']} {pracownik.wyn_netto():.2f} {pracownik.skladki_pracodawcy()} {round(laczny_koszt, 2)}")
+	print(f"{pracownicy[id]['imie']} {pracownik.wyn_netto():.2f} {pracownik.skladki_pracodawcy()} {round(pracownicy[id]['pensja'] + pracownik.skladki_pracodawcy(), 2)}")
 
-print(laczny_koszt)
+print(round(laczny_koszt, 2))
